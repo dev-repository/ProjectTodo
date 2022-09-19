@@ -2,12 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>TODOLIST HOMEWORK</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="wrapper">
+      <header>TODO</header>
+      <div class="inputField">
+        <input type="text" id="iptTodo" placeholder="일정 추가하기">
+        <button type="button" id="addBtn">
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+      <ul class="todoList">
+        <button class="btn btn-danger"></button> 
+      </ul>
+      <div class="footer">
+        <span>난 <span class="list"></span>개의 계획이 있다.</span>
+        <button type="button" id="allDelBtn" >전부 삭제</button>
+      </div>  
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
