@@ -7,10 +7,10 @@ const iptTodo = document.getElementById("iptTodo");
 const allDelBtn = document.getElementById("allDelBtn");
 const listNumber = document.getElementsByClassName("listNum");
 
-export function showList(){
-    let getLocal = localStorage.getItem("New Todo");
-    let arrTodo = typeof getLocal === "undefined" ? getTodo() : JSON.parse(getLocal);
+export function showList(todo){
+    let arrTodo = typeof getLocal === "undefined" ? getTodo() : todo;
 
+    console.log(`todo =======> ${todo}`);
     console.log(`arrTodo List =====> ${arrTodo}`);
     
     if(arrTodo.length){
@@ -25,10 +25,10 @@ export function showList(){
     })
     .join("");
     
-    listNumber.textContent = arrTodo.length;
+    listNumber[0].textContent = arrTodo.length;
    
     console.log(`arrTodo Count =======> ${arrTodo.length}`);
-    console.log(`listNumber =======> ${listNumber.textContent = arrTodo.length}`);
+    console.log(`listNumber =======> ${ listNumber.textContent = arrTodo.length}`);
 
     listTodo.innerHTML = Html;
     iptTodo.value = "";
