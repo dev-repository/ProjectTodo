@@ -18,6 +18,77 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
   </div>
+  <div id="todoList"></div>
+`
+setupCounter(document.querySelector('#counter'))
+
+document.querySelector('#todoList').innerHTML = `
+  <div class="search_box">
+  <input type="text" class="add_todoList" placeholder="할일을 입력하시오...">
+  <button type="button" id="add_btn" class="add_btn">검색</button>
+  </div>
+  <div id="list"></div>
 `
 
-setupCounter(document.querySelector('#counter'))
+ // totoT: input TodoList의 title
+ var todoT = document.getElementsByClassName('add_todoList');
+ var button = document.getElementById('add_btn');
+ var list = document.getElementById('list');
+
+ let itemList = [];
+
+ button.addEventListener("click",addTodo);
+
+ function addTodo(){
+    let list = document.querySelector(".add_todoList").value;
+    console.log(list);
+    /***
+     * .add_todoList에 value값이 있으면 배열안에 list값을넣고
+     * value를 다시 비우고
+     * focus를 input태그에다가 다시 맞춘다.
+     * todoListSee()함수 실행
+     */
+    if(list != null){
+      itemList.push(list);
+      document.querySelector(".add_todoList").value = "";
+      document.querySelector(".add_todoList").focus();
+    }
+
+    todoListSee();
+ }
+
+ function todoListSee(){
+  /***
+   * addList <div>를 감싸고
+   * 
+   */
+  let addList = "<div class='search'>"
+  let item = itemList.length;
+  for(let i=0; i<itemList.length; i++){
+    addList += "<p>" + itemList[i] + "</p>"
+    addList += "<button class='closeBtn' id=" + i + ">x</button>"
+  }
+  addList += "</div>";
+  document.querySelector("#list").innerHTML = addList;
+  
+  console.log(item);
+  
+  let deleteList = document.getElementsByClassName('closeBtn');
+  for(let i=0; i<deleteList.length; i++){
+    deleteList[i].addEventListener("click", deleteItem);
+  }
+  deleteItem();
+ }
+
+ function deleteItem(){
+  console.log("aa");
+ }
+
+// function addTodo(){
+//   var newTodo = document.createElement('p');
+//   newTodo.innerHTML = todoT.value;
+//   todoT.value="";
+ 
+  
+//   list.appendChild(newTodo);
+// }

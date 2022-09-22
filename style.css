@@ -26,7 +26,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -82,6 +82,64 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* 0919 12:25 */
+
+#todoList{
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+#todoList .search_box{
+  display: flex;
+  justify-content: center;
+}
+
+#todoList input{
+  display: block;
+  width: 500px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+}
+.fd{
+  width: 100px;
+  height: 30px;
+  background-color: red;
+}
+
+#todoList button{
+  float: left;
+  border: 1px solid black;
+  border-radius: 0px;
+  border-left: none;
+}
+/* 0919 12:25 */
+/* 0920 12:10 */
+.search{
+  width: 580px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.search p{
+  width: 507px;
+  height: 45px;
+  line-height: 45px;
+  background-color: rgb(214, 214, 214);
+  margin: 3px 0;
+}
+.search a{
+  width: 71px;
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #e4e4e4;
+  padding: 10px 0;
+}
+/* 0920 12:10 */
 
 @media (prefers-color-scheme: light) {
   :root {
