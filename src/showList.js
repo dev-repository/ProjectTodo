@@ -7,10 +7,9 @@ const iptTodo = document.getElementById("iptTodo");
 const allDelBtn = document.getElementById("allDelBtn");
 const listNumber = document.getElementsByClassName("listNum");
 
-export function showList(todo){
-    let arrTodo = typeof getLocal === "undefined" ? getTodo() : todo;
+export function showList(){
+    let arrTodo = getTodo();
 
-    console.log(`todo =======> ${todo}`);
     console.log(`arrTodo List =====> ${arrTodo}`);
     
     if(arrTodo.length){
@@ -27,7 +26,7 @@ export function showList(todo){
     
     listNumber[0].textContent = arrTodo.length;
    
-    console.log(`arrTodo Count =======> ${arrTodo.length}`);
+    //console.log(`arrTodo Count =======> ${arrTodo.length}`);
     console.log(`listNumber =======> ${ listNumber.textContent = arrTodo.length}`);
 
     listTodo.innerHTML = Html;
