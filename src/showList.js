@@ -1,6 +1,7 @@
 import { getTodo } from "./getTodo.js";
 import { newItem } from "./newItem.js";
 import { listAllDelete } from './listAllDelete.js';
+import { listDelete } from "./listDelete.js";
 
 const listTodo = document.querySelector(".todoList");
 const iptTodo = document.getElementById("iptTodo");
@@ -10,7 +11,7 @@ const listNumber = document.getElementsByClassName("listNum");
 export function showList(){
     let arrTodo = getTodo();
 
-    console.log(`arrTodo List =====> ${arrTodo}`);
+    //console.log(`arrTodo List =====> ${arrTodo}`);
     
     if(arrTodo.length){
         allDelBtn.classList.add("active");
@@ -27,10 +28,11 @@ export function showList(){
     listNumber[0].textContent = arrTodo.length;
    
     //console.log(`arrTodo Count =======> ${arrTodo.length}`);
-    console.log(`listNumber =======> ${ listNumber.textContent = arrTodo.length}`);
+    //console.log(`listNumber =======> ${ listNumber.textContent = arrTodo.length}`);
 
     listTodo.innerHTML = Html;
     iptTodo.value = "";
 
     listAllDelete();
+    listDelete();
 }
