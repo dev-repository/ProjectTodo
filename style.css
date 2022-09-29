@@ -209,3 +209,15 @@ body{
   pointer-events: auto;
 }
 /* TODO LIST */
+
+/* Drag And Drop */
+.draggable.dragging {
+  opacity: .5;
+  border: 2px dashed red;
+}
+
+.el {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Drag And Drop */
