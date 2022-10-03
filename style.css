@@ -97,7 +97,7 @@ button:focus-visible {
 
 #todoList input{
   display: block;
-  width: 500px;
+  width: 800px;
   height: 40px;
   font-size: 18px;
   text-align: center;
@@ -108,7 +108,7 @@ button:focus-visible {
   background-color: red;
 }
 
-#todoList button{
+#todoList .add_btn{
   float: left;
   border: 1px solid black;
   border-radius: 0px;
@@ -117,28 +117,31 @@ button:focus-visible {
 /* 0919 12:25 */
 /* 0920 12:10 */
 .search{
-  width: 580px;
-  display: flex;
+  width: 800px;
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
 }
-
+.search div{
+  display: flex;
+}
 .search p{
-  width: 507px;
+  width: 650px;
   height: 45px;
   line-height: 45px;
   background-color: rgb(214, 214, 214);
   margin: 3px 0;
 }
-.search a{
+
+.search button{
   width: 71px;
   display: block;
-  font-size: 36px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #e4e4e4;
   padding: 10px 0;
 }
+
 /* 0920 12:10 */
 
 @media (prefers-color-scheme: light) {

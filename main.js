@@ -65,30 +65,69 @@ document.querySelector('#todoList').innerHTML = `
   let addList = "<div class='search'>"
   let item = itemList.length;
   for(let i=0; i<itemList.length; i++){
-    addList += "<p>" + itemList[i] + "</p>"
+    addList += "<div class='divBox' draggable='true'>"
+    addList += "<p class='pBox'>" + itemList[i] + "</p>"
     addList += "<button class='closeBtn' id=" + i + ">x</button>"
+    addList += "<button class='modifyBtn' id=mo" + i + ">수정</button>"
+    addList += "</div>"
   }
-  addList += "</div>";
   document.querySelector("#list").innerHTML = addList;
   
   console.log(item);
   
-  let deleteList = document.getElementsByClassName('closeBtn');
+  let deleteList = document.querySelectorAll('.closeBtn');
+  console.log("dddddd--->" ,deleteList);
   for(let i=0; i<deleteList.length; i++){
-    deleteList[i].addEventListener("click", deleteItem);
+    deleteList[i].addEventListener("click", () => deleteItem(i));
   }
-  deleteItem();
+
+  let modiList = document.getElementsByClassName('modifyBtn');
+  for(let j=0; j<modiList.length; j++){
+    modiList[j].addEventListener("click", () => editItem(j));
+  }
+
+  let dragLi = document.querySelectorAll('.divBox');
+
+  // for(let a=0; a<dragLi.length; a++){
+  //   dragLi[a].addEventListener("dragstart", () => drag());
+  //   dragLi[a].addEventListener("dragend", () => dragEnd());
+  // }
+  dragLi.forEach((todo) =>{
+    todo.addEventListener('dragstart',dragstart);
+    todo.addEventListener('dragend',dragend);
+    todo.addEventListener('dragend',dragend);
+    todo.addEventListener('dragend',dragend);
+  })
  }
 
- function deleteItem(){
-  console.log("aa");
+
+ function deleteItem(i){
+  itemList.splice(i,1);
+  todoListSee();
  }
 
-// function addTodo(){
-//   var newTodo = document.createElement('p');
-//   newTodo.innerHTML = todoT.value;
-//   todoT.value="";
- 
-  
-//   list.appendChild(newTodo);
-// }
+ function editItem(j){
+  console.log("클릭");
+  console.log(itemList[j]);
+  var value = prompt("수정", itemList[j] );
+  if(value)
+    {
+        document.querySelector('.pBox').innerHTML = value;
+    }
+ }
+
+//  function drag(){
+//   console.log("222");
+//  }
+//  function dragEmd(){
+//   console.log("end");
+//  }
+
+function dragstart(e){
+  e.preventDefault();
+  console.log('start');
+}
+function dragend(){
+  this.appendChild()
+  console.log('end');
+}
