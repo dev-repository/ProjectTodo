@@ -2,7 +2,6 @@ import { getTodo } from "./getTodo.js";
 import { newItem } from "./newItem.js";
 import { listAllDelete } from './listAllDelete.js';
 import { listDelete } from "./listDelete.js";
-import { dragAndDrop } from "./dragAndDrop.js"
 
 const listTodo = document.querySelector(".todoList");
 const iptTodo = document.getElementById("iptTodo");
@@ -36,5 +35,4 @@ export function showList(){
 
     listAllDelete();
     listDelete();
-    dragAndDrop();
 }

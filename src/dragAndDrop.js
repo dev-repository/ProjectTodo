@@ -9,7 +9,10 @@ export function dragAndDrop(){
     const $ = (select) => {
         document.querySelectorAll(select);
         const draggables = $(".draggable");
-        const container = $(".todoList");
+        const container = $(".container");
+        
+        console.log(`Draggables ======>${draggables}`);
+        console.log(`container ======>${container}`);
 
         draggables.forEach(el => {
             el.addEventListener("dragStart", () => {
